@@ -97,44 +97,84 @@ textarea {
 
 
 html {
-  background-color: #301934;
+  background-color: #4F7D9C;
   height: 100%;
   width: 100%;
 }
 
 body {
+  color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  padding: 1.5em 2em;
   font-size: 1.25em;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  flex-flow: row wrap;
-  font-weight: 400;
+    /*add display:flex and set justify-content to space-between*/
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: 400;
+    justify-content: space-between;
+    max-width: 1200px;
+  }
+
+header,
+footer,
+main {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.div-1, 
-.div-2, 
-.div-3 {
+h1 {
+    color:#b8e3ea;
+    font-size: 2.5em;
+}
+
+main {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+main p {
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.flex-items {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
-  line-height: 1.3em;
-  font-size: 1.1em;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  line-height: 1.3em;
+  font-size: 1.1em;
   /*--width 30% for desktop, see media queries--*/
 }
 
+#div-1, 
+#div-2 {
+    border-bottom: .5px solid #f5f5f5;
+}
+
 .wrapper span {
+    color: #fff;
     font-family: 'Lora', serif;
     font-size: 1.1em;
 }
+
+footer {
+    font-size: 1.5em;
+    border-top: 2px solid #ccc;
+    margin-top: 10px;
+}
+
+footer i {
+    padding: 30px 20px 0 0;
+  }
 
 
 /* ==========================================================================
@@ -218,17 +258,23 @@ body {
    ========================================================================== */
 
 /*---------- Desktops ----------*/
+
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
 @media (min-width: 1200px) {
-    .div-1, 
-    .div-2, 
-    .div-3 {
-        width: 30%;
+    .flex-items {
+        flex-basis: 30%;
     }
 
-    .div-1, 
-    .div-2 {
+    #div-1, 
+    #div-2 {
         border-right: .5px solid #f5f5f5;
         padding-right: 1.5%;
+        border-bottom: none;
     }
 }  
 
